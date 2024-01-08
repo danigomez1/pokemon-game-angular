@@ -25,11 +25,11 @@ export class PokemonViewComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  ratoliSobre() {
+  ratoliSobre() { //metode per reduir la imatge
     this.height = 100;
     this.width = 100;
   }
-  ratoliFora() {
+  ratoliFora() { //metode per tornar el tamany a la normalitat
     this.height = 200;
     this.width = 275;
   }
