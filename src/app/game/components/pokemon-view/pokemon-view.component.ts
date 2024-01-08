@@ -25,5 +25,12 @@ export class PokemonViewComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  ratoliSobre() {
+    this.height = 100;
+    this.width = 100;
+  }
+  ratoliFora() {
+    this.height = 200;
+    this.width = 275;
+  }
 }
