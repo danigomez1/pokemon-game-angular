@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoresComponent implements OnInit {
 
+  arrayPunts: any
+
   constructor() { }
 
   ngOnInit(): void {
+    // @ts-ignore
+    this.arrayPunts = JSON.parse(localStorage.getItem('scores')) || [];
   }
 
 }

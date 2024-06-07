@@ -1,8 +1,8 @@
-#formulari {
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: 50%;
+button {
+  display: inline-block;
+  width: 130px;
+  margin-left: 20px;
 }
+p {display: inline-block}
+input {display: inline-block; margin-left: 10px;}
+form {margin-left: 30%; margin-top: 15%}

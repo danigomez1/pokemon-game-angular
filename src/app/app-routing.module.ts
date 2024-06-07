@@ -10,6 +10,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'isessiogomez',
+    component: IniciarSessioGomezComponent
+  },
+  {
     path: 'game',
     loadChildren: () => import('./game/game.module').then(m => m.GameModule)
   },
@@ -21,10 +25,6 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'home'
   },
-  {
-    path: 'isessiogomez',
-    component: IniciarSessioGomezComponent
-  }
 ];
 
 @NgModule({

@@ -21,6 +21,14 @@ export class GameoverComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // @ts-ignore
+    let registros = JSON.parse(localStorage.getItem('scores')) || [];
+    const nuevoRegistro = {
+      nom: localStorage.getItem("usuariActual"),
+      punts: this.score,
+    };
+    registros.push(nuevoRegistro);
+    localStorage.setItem('scores', JSON.stringify(registros));
   }
 
 }

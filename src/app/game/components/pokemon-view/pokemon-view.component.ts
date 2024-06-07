@@ -10,27 +10,40 @@ import { Component, Input, OnInit } from '@angular/core';
       height: 200px; */
     }`,
     `.cover { object-fit: cover; }`,
-    `.show { filter: brightness(1); }`
+    `.show { filter: brightness(1); }`,
+    `.red-background { background-color: red; }`
   ]
 })
 export class PokemonViewComponent implements OnInit {
 
   @Input() url: string = '';
   @Input() show: boolean = true;
-  @Input() width: number = 0;
-  @Input() height: number = 0;
+  @Input() width: number = 275;
+  @Input() height: number = 200;
   @Input() adjust: boolean = false;
+
+  backgroundRed: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  ratoliSobre() { //metode per reduir la imatge
+  ratoliSobre() {
     this.height = 100;
     this.width = 100;
   }
-  ratoliFora() { //metode per tornar el tamany a la normalitat
+  ratoliFora() {
     this.height = 200;
     this.width = 275;
+  }
+  dobleClick() {
+    this.backgroundRed = !this.backgroundRed;
+    if (this.width > 200) {
+      this.width = 100;
+      this.height = 100;
+    } else {
+      this.width = 275;
+      this.height = 200;
+    }
   }
 }

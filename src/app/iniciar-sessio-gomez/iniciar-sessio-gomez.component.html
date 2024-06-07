@@ -1,5 +1,14 @@
-<div id="formulari">
-  <label>JUGADOR: </label>
-  <input type="text" id="text">
-  <button (click)="clickPlay()">JUGAR</button>
-</div>
+<form>
+  <p>JUGADOR: </p>
+  <input name="nomjugador" matInput [(ngModel)]="this.nomJugador">
+  <p>PUNTS: </p>
+  <input name="puntsjugador" matInput [(ngModel)]="this.puntsJugador">
+  <button (click)="enviarJuagador()"
+          mat-raised-button
+          color="primary"
+          routerLink="/game"
+          class="breath"
+          type="submit">
+    JUGAR
+  </button>
+</form>

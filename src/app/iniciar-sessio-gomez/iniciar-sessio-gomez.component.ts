@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {ServeiJugadorService} from "../servei-jugador.service";
 
 @Component({
   selector: 'app-iniciar-sessio-gomez',
@@ -6,12 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./iniciar-sessio-gomez.component.css']
 })
 export class IniciarSessioGomezComponent implements OnInit {
-
-  constructor() { }
+  nomJugador:any
+  puntsJugador:any
+  constructor(private router: Router, private s : ServeiJugadorService) { }
 
   ngOnInit(): void {
   }
-  clickPlay() {
-    //redireccionar cap a la ruta home
+
+  enviarJuagador () {
+    localStorage.setItem("usuariActual", this.nomJugador)
+    localStorage.setItem("puntsActual", this.puntsJugador)
+    this.s.nomJugador = this.nomJugador;
+    this.s.puntsJugador = this.puntsJugador;
+    this.router.navigate(['./game']);
   }
 }
